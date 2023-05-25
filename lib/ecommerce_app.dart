@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop/home_page.dart';
+import 'package:shop/pages/home_page.dart';
 
 class EcommerceApp extends StatelessWidget {
   @override

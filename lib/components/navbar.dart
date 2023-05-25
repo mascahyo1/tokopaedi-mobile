@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Navbar extends StatelessWidget implements PreferredSizeWidget {
+  final BuildContext context;
+
+  Navbar({required this.context});
+
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
 
@@ -23,6 +27,10 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
                 value: 'profile',
               ),
               PopupMenuItem(
+                child: Text('Login'),
+                value: 'login',
+              ),
+              PopupMenuItem(
                 child: Text('Logout'),
                 value: 'logout',
               ),
@@ -31,6 +39,11 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
           onSelected: (value) {
             if (value == 'profile') {
               // Navigate to profile screen
+            } else if (value == 'login') {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+              );
             } else if (value == 'logout') {
               // Perform logout functionality
             }
